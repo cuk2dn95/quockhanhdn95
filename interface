@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+   <link rel="stylesheet" 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+  
+  <script>
+  $(document).ready(function(){
+
+ $('.datepicker').datepicker({
+    format: "mm/dd/yyyy",
+    
+   
+});
+
+
+$( "#add-devices-form" ).dialog({
+	title: "Thêm thuyết bị",
+	height:300,
+    width:1200,
+    autoOpen:false,
+    modal:true,
+    position: { my: "center", at: "center", of: window },
+   	show: { effect: "fade", duration: 800 },
+	hide: { effect: "explode", duration: 1000 },
+    
+    	 closeOnEscape: false,
+   		 open: function(event, ui) {
+        $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+    }
+});
+
+  $("#add-devices-btn").click(function(){
+                $("#add-devices-form").dialog("open");
+            });
+
+ 	$("#add-devices-closebtn").click(function(){
+                $("#add-devices-form").dialog("close");
+            });
+ 
+ 
+ 
+ });
+
+
+  
+  
+  	
+ 
+  </script>
+</head>
+<body>
+  
+  
+  
+ <button id="add-devices-btn" class="btn btn-default btn-info">Thêm thiết bị</button> 
+  
+  
+<div id="add-devices-form" >
+
+<div class="container">
+
+
+
+<div class="row">
+<div class="col-md-12">
+<h1> <span class="label lb-lg label-success ">Thêm thiết bị </span>  </h1>
+</div>
+</div>
+
+
+<div class="row">
+
+<div class="col-md-3">
+<lable class="label label-info">tên thiết bị </lable> </br>
+
+<input   id="name">
+</div>
+
+
+
+
+
+<div class="col-md-3">
+<label class="label label-info">loại </label> </br>
+<select style="width:172px;height:25px; "  id="">
+<option>Disk</option>
+<option>Monitor</option>
+</select>
+</div>
+
+
+
+<div class="col-md-3">
+<label class="label label-info" > Ngày nhập</label> </br>
+<input type="text" class="datepicker" >
+</div>
+
+
+<div class="col-md-3">
+
+<label class="label label-info"> Số serial </label> </br>
+<input type="text">
+</div>
+
+
+</div>
+
+
+<div class="row">
+<div class="col-md-3">
+<label class="label label-info">made in</label><br>
+<select style="width:172px;height:25px; "  id="">
+<option>Trung Quốc</option>
+<option>Mỹ</option>
+</select>
+
+</div>
+
+<div class="col-md-3">
+<label class="label label-info">giá </label><br>
+<input type="text">
+</div>
+
+<div class="col-md-3">
+<label class="label label-info">thời gian bảo hành</label><br>
+<input type="text">
+</div>
+
+<div class="col-md-3">
+<label class="label label-info">tình trạng </label><br>
+<select style="width:172px;height:25px; "  id="">
+<option>Mới</option>
+<option>Đã sử dụng</option>
+</select>
+</div>
+
+
+
+</div>
+
+
+<br>
+<button id="add-devices-addbutton" class="btn btn-default btn-success"> Thêm</button>
+<button id="add-devices-closebtn" class="close-form btn btn-default btn-danger"> Hủy</button>
+
+
+</div>
+</div>
+</body>
+</html>
