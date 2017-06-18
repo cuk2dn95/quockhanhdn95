@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+   <link rel="stylesheet" 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+  
+  <script>
+ 		$( function() {
+    $( "#add-category-form" ).dialog({
+    title:"Thêm danh mục",
+    height:230,
+    width:330,
+     autoOpen:false,
+     modal:true,
+      position: { my: "center", at: "center", of: window },
+      
+      show: { effect: "fade", duration: 800 },
+	hide: { effect: "explode", duration: 1000 },
+    
+    	 closeOnEscape: false,
+   		 open: function(event, ui) {
+        $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();}
+      
+      
+    });
+    
+    
+    
+    
+     $( "#edit-category-form" ).dialog({
+    title:"Sửa danh mục",
+    height:300,
+    width:300,
+     autoOpen:false,
+     modal:true,
+      position: { my: "center", at: "center", of: window },
+      
+      show: { effect: "fade", duration: 800 },
+	hide: { effect: "explode", duration: 1000 },
+    
+    	 closeOnEscape: false,
+   		 open: function(event, ui) {
+        $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();}
+      
+      
+    });
+    
+    
+    
+    
+    $("#add-category-btn").click(function(){
+    
+    	$("#add-category-form").dialog("open");
+    
+    });
+    
+    $("#add-category-closebtn").click(function(){
+    
+    	$("#add-category-form").dialog("close");
+    
+    });
+    
+    
+    $("#edit-category-btn").click(function(){
+    
+    	$("#edit-category-form").dialog("open");
+    
+    });
+    
+    $("#edit-category-closebtn").click(function(){
+    
+    	$("#edit-category-form").dialog("close");
+    
+    });
+    
+    
+    
+  } );
+  </script>
+</head>
+<body>
+  
+  <div class="container">
+  <h2>Category</h2>
+  <ul style="width:400px;" class="list-group">
+  	 <a href="#" class="list-group-item">Monitor<span class="badge">12</span>  </a>
+    <a href="#" class="list-group-item">Disk<span class="badge">5</span></a>
+    <a href="#" class="list-group-item">CPU<span class="badge">3</span></a>
+  </ul>
+  <button id="add-category-btn" type="button" class="btn btn-default btn-success btn-sm">
+          <span class="glyphicon glyphicon-plus"></span> Thêm danh mục
+        </button>
+   <button id="edit-category-btn" type="button" class="btn btn-warning btn-sm ">
+          <span class="glyphicon glyphicon-pencil"></span> Sửa danh mục
+        </button>     
+</div>
+
+
+	<div class="container" id="add-category-form">
+   
+    <h3><label class="label label-primary">Tên danh mục :</label></h3>
+    <input style="width:200px;"type="text">
+  	 <br><br>
+    <button class="btn btn-success">Thêm</button>
+    <button id="add-category-closebtn" class="btn btn-danger">Hủy</button>
+    </div>
+
+
+	<div class="container" id="edit-category-form">
+    	
+    	<h3><label class="label label-primary">Danh mục cũ</label></h3> 
+        <select style="width:172px;height:25px; ">
+        
+        <option>Monitor</option>
+        <option>Disk</option>
+        <option>CPU</option>
+        
+        
+        </select>
+        <h3><label class="label label-primary">Danh mục mới</label></h3> 
+        <input type="text"><br><br>
+        <button class="btn btn-success">Sửa</button>
+        <button id="edit-category-closebtn" class="btn btn-danger">Hủy</button>
+        
+    </div>
+
+
+</body>
+</html>
